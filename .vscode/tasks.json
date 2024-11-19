@@ -1,0 +1,23 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build ZPPTests",
+      "type": "shell",
+      "isBackground": true,
+      "command": "cmake --build build --parallel --target ZPPTests"
+    },
+    {
+      "label": "Config ZPPTests",
+      "type": "shell",
+      "isBackground": true,
+      "command": "cmake -Bbuild -GNinja -DCMAKE_BUILD_TYPE=Debug"
+    },
+    {
+      "label": "Run ZPPTests",
+      "type": "shell",
+      "isBackground": true,
+      "command": "./build/tests/ZPPTests"
+    }
+  ]
+}
