@@ -4,7 +4,7 @@
 
 <img src="data/images/logo.svg" width="15%" align="right">
 
-ZPP is an acronym for ZIMO Programmable Project, a file format for [sound project](https://www.zimo.at/web2010/sound/tableindex_EN.htm) updates. ZPP files are currently used by the following products:
+ZPP is an acronym for ZIMO Precompiled Project, a file format for [sound project](https://www.zimo.at/web2010/sound/tableindex_EN.htm) updates. ZPP files are currently used by the following products:
 - Command stations
   - [ZIMO MXULF](http://www.zimo.at/web2010/products/InfMXULF_EN.htm)
   - [Z21](https://www.z21.eu/en)
