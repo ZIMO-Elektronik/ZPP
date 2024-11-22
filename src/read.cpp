@@ -53,20 +53,20 @@ File read(std::filesystem::path path) {
     begin(file.flash));
 
   // CVs
-  auto const eeprom_start{
+  auto const cvs_start{
     static_cast<uint32_t>(static_cast<uint8_t>(chunk[13uz]) << 24u |
                           static_cast<uint8_t>(chunk[14uz]) << 16u |
                           static_cast<uint8_t>(chunk[15uz]) << 8u |
                           static_cast<uint8_t>(chunk[16uz]) << 0u)};
-  auto const eeprom_length{
+  auto const cvs_length{
     static_cast<size_t>(static_cast<uint8_t>(chunk[17uz]) << 8u |
                         static_cast<uint8_t>(chunk[18uz]) << 0u)};
-  for (auto i{0uz}; i < eeprom_length; i += 3uz) {
+  for (auto i{0uz}; i < cvs_length; i += 3uz) {
     if (auto const cv_addr{static_cast<uint32_t>(
-          static_cast<uint8_t>(chunk[eeprom_start + i]) << 8u |
-          static_cast<uint8_t>(chunk[eeprom_start + i + 1uz]) << 0u)};
-        cv_addr < eeprom_length) {
-      auto const byte{static_cast<uint8_t>(chunk[eeprom_start + i + 2uz])};
+          static_cast<uint8_t>(chunk[cvs_start + i]) << 8u |
+          static_cast<uint8_t>(chunk[cvs_start + i + 1uz]) << 0u)};
+        cv_addr < cvs_length) {
+      auto const byte{static_cast<uint8_t>(chunk[cvs_start + i + 2uz])};
       file.cvs.push_back({cv_addr, byte});
     }
   }
