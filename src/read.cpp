@@ -74,7 +74,13 @@ File read(std::filesystem::path path) {
   // Coded
   file.coded = chunk[19uz];
 
+  // Developer code
+  file.developer_code = {static_cast<uint8_t>(chunk[flash_start + 2190uz]),
+                         static_cast<uint8_t>(chunk[flash_start + 2191uz]),
+                         static_cast<uint8_t>(chunk[flash_start + 2192uz]),
+                         static_cast<uint8_t>(chunk[flash_start + 2193uz])};
+
   return file;
 }
 
-}  // namespace zpp
+} // namespace zpp

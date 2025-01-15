@@ -23,4 +23,4 @@ namespace zpp {
 /// \return ZPP file
 File read(std::filesystem::path path);
 
-}  // namespace zpp
+} // namespace zpp
