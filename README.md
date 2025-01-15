@@ -19,6 +19,7 @@ ZPP is an acronym for ZIMO Precompiled Project, a file format for [sound project
     <li><a href="#file-format-specification">File Format Specification</a></li>
       <ul>
         <li><a href="#header">Header</a></li>
+        <li><a href="#flash-data">Flash Data</a></li>
       </ul>
     <li><a href="#getting-started">Getting Started</a></li>
       <ul>
@@ -57,7 +58,7 @@ A ZPP file consists of a header and a binary blob of sound project data.
 | 54     | 4      | FA names address         | Offset to function output strings in file                                                                                                     |
 | 58     | 2      | FA names count           | Number of function output strings in file                                                                                                     |
 
-## Flash data
+## Flash Data
 Within the flash data there is also the developer code, which must be sent to the decoders in advance in order to load an encrypted project. The [MDU](https://github.com/ZIMO-Elektronik/MDU) and [ZUSI](https://github.com/ZIMO-Elektronik/ZUSI) protocols make use of this.
 
 | Offset | Length | Content        | Description                              |
