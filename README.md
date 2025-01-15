@@ -57,6 +57,13 @@ A ZPP file consists of a header and a binary blob of sound project data.
 | 54     | 4      | FA names address         | Offset to function output strings in file                                                                                                     |
 | 58     | 2      | FA names count           | Number of function output strings in file                                                                                                     |
 
+## Flash data
+Within the flash data there is also the developer code, which must be sent to the decoders in advance in order to load an encrypted project. The [MDU](https://github.com/ZIMO-Elektronik/MDU) and [ZUSI](https://github.com/ZIMO-Elektronik/ZUSI) protocols make use of this.
+
+| Offset | Length | Content        | Description                              |
+| ------ | ------ | -------------- | ---------------------------------------- |
+| 2190   | 4      | Developer code | Developer code for flash data decryption |
+
 ## Getting Started
 ### Prerequisites
 - C++23 compatible compiler

@@ -13,13 +13,15 @@ TEST(read, read_free_zpp) {
 
   EXPECT_EQ(zpp_file.cvs[0uz], (std::pair<uint16_t, uint8_t>{0u, 3u}));
   EXPECT_FALSE(zpp_file.coded);
+  EXPECT_EQ(zpp_file.developer_code, (std::array<uint8_t, 4uz>{}));
 }
 
-TEST(read, read_free_coded) {
+TEST(read, read_coded_zpp) {
   auto zpp_file{
     zpp::read(source_location_parent_path() /
               "../data/Taurus_LeoSoundLab_Roco_8-Pol_MX_crypt.zpp")};
 
   EXPECT_EQ(zpp_file.cvs[0uz], (std::pair<uint16_t, uint8_t>{0u, 3u}));
   EXPECT_TRUE(zpp_file.coded);
+  EXPECT_NE(zpp_file.developer_code, (std::array<uint8_t, 4uz>{}));
 }

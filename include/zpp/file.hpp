@@ -25,7 +25,7 @@ struct File {
   std::vector<uint8_t> flash;
   std::vector<std::pair<uint16_t, uint8_t>> cvs;
   bool coded{};
-  std::array<uint8_t, 4uz> load_code{};
+  std::array<uint8_t, 4uz> developer_code{};
 };
 
-}  // namespace zpp
+} // namespace zpp
