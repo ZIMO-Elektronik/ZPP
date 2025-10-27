@@ -6,6 +6,7 @@ add_executable(ZPPTests ${SRC})
 sanitize(address,undefined)
 
 target_common_warnings(ZPPTests PRIVATE)
+target_common_errors(ZPPTests PRIVATE -Werror)
 
 cpmaddpackage(URI "gh:google/googletest#main" OPTIONS "INSTALL_GTEST OFF")
 

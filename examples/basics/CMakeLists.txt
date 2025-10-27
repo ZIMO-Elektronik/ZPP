@@ -4,5 +4,6 @@ add_executable(ZPPExamples ${SRC})
 sanitize(address,undefined)
 
 target_common_warnings(ZPPExamples PRIVATE)
+target_common_errors(ZPPExamples PRIVATE)
 
 target_link_libraries(ZPPExamples PRIVATE ZPP::ZPP)
