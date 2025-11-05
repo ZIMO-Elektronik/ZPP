@@ -6,11 +6,13 @@
 
 ZPP is an acronym for ZIMO Precompiled Project, a file format for [sound project](https://www.zimo.at/web2010/sound/tableindex_EN.htm) updates. ZPP files are currently used by the following products:
 - Command stations
+  - [ZIMO KLUG](https://www.zimo.at/web2010/products/KLUG_EN.htm)
   - [ZIMO MXULF](http://www.zimo.at/web2010/products/InfMXULF_EN.htm)
   - [Z21](https://www.z21.eu/en)
 - Decoders
-  - [ZIMO MN decoders](http://www.zimo.at/web2010/products/mn-nicht-sound-decoder_EN.htm)
-  - [ZIMO small-](http://www.zimo.at/web2010/products/ms-sound-decoder_EN.htm) and [large-scale MS decoders](http://www.zimo.at/web2010/products/ms-sound-decoder-grossbahn_EN.htm)
+  - [ZIMO small-](https://www.zimo.at/web2010/products/ms-sound-decoder_EN.htm) and [large-scale MS decoders](https://www.zimo.at/web2010/products/ms-sound-decoder-grossbahn_EN.htm)
+  - [ZIMO MN decoders](https://www.zimo.at/web2010/products/mn-nicht-sound-decoder_EN.htm)
+  - [ZIMO FS decoders](https://www.zimo.at/web2010/products/funktionsdecoder_EN.htm)
   - [ZIMO small-](http://www.zimo.at/web2010/products/lokdecoder_EN.htm) and [large-scale MX decoders](http://www.zimo.at/web2010/products/lokdecodergrosse_EN.htm)
 
 <details>
