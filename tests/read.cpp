@@ -29,3 +29,14 @@ TEST(read, read_coded_zpp) {
   EXPECT_NE(zpp_file.developer_code, (std::array<uint8_t, 4uz>{}));
   EXPECT_EQ(zpp_file.wav_file_names[0uz], "Pfeife kurz");
 }
+
+TEST(read, read_metadata) {
+  auto zpp_file{
+    zpp::read(source_location_parent_path() / "../data/Metadata.zpp")};
+
+  EXPECT_EQ(zpp_file.wav_file_names[0uz], "Testsample1");
+  EXPECT_EQ(zpp_file.wav_file_names[1uz], "Testsample2");
+  EXPECT_EQ(zpp_file.wav_file_names[2uz], "Testsample3");
+  EXPECT_EQ(zpp_file.author, "Testauthor");
+  EXPECT_EQ(zpp_file.email, "Testemail");
+}

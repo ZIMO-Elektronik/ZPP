@@ -122,7 +122,7 @@ File read(std::filesystem::path path) {
                           static_cast<uint8_t>(chunk[39uz]) << 16u |
                           static_cast<uint8_t>(chunk[40uz]) << 8u |
                           static_cast<uint8_t>(chunk[41uz]) << 0u)};
-  auto const mail_count{static_cast<uint8_t>(chunk[author_addr])};
+  auto const mail_count{static_cast<uint8_t>(chunk[mail_addr])};
   file.email = std::string(&chunk[mail_addr + 1uz], mail_count);
 
   return file;
