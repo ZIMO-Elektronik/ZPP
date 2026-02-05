@@ -26,6 +26,9 @@ struct File {
   std::vector<std::pair<uint16_t, uint8_t>> cvs;
   bool coded{};
   std::array<uint8_t, 4uz> developer_code{};
+  std::vector<std::string> wav_file_names{};
+  std::string author{};
+  std::string email{};
 };
 
 } // namespace zpp

@@ -14,6 +14,9 @@ TEST(read, read_free_zpp) {
   EXPECT_EQ(zpp_file.cvs[0uz], (std::pair<uint16_t, uint8_t>{0u, 3u}));
   EXPECT_FALSE(zpp_file.coded);
   EXPECT_EQ(zpp_file.developer_code, (std::array<uint8_t, 4uz>{}));
+  EXPECT_EQ(zpp_file.wav_file_names[176uz], "Luftpumpe");
+  EXPECT_EQ(zpp_file.author, "unknown");
+  EXPECT_EQ(zpp_file.email, "unknown");
 }
 
 TEST(read, read_coded_zpp) {
@@ -24,4 +27,5 @@ TEST(read, read_coded_zpp) {
   EXPECT_EQ(zpp_file.cvs[0uz], (std::pair<uint16_t, uint8_t>{0u, 3u}));
   EXPECT_TRUE(zpp_file.coded);
   EXPECT_NE(zpp_file.developer_code, (std::array<uint8_t, 4uz>{}));
+  EXPECT_EQ(zpp_file.wav_file_names[0uz], "Pfeife kurz");
 }
