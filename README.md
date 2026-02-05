@@ -77,13 +77,13 @@ This library is meant to be consumed with CMake.
 
 ```cmake
 # Either by including it with CPM
-cpmaddpackage("gh:ZIMO-Elektronik/ZPP@0.0.0")
+cpmaddpackage("gh:ZIMO-Elektronik/ZPP@0.2.0")
 
 # or the FetchContent module
 FetchContent_Declare(
   ZPP
   GIT_REPOSITORY "https://github.com/ZIMO-Elektronik/ZPP"
-  GIT_TAG v0.0.0)
+  GIT_TAG v0.2.0)
 
 target_link_libraries(YourTarget PRIVATE ZPP::ZPP)
 ```
