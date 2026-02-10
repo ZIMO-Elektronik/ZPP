@@ -40,3 +40,10 @@ TEST(read, read_metadata) {
   EXPECT_EQ(zpp_file.author, "Testauthor");
   EXPECT_EQ(zpp_file.email, "Testemail");
 }
+
+TEST(read, read_mn) {
+  auto zpp_file{
+    zpp::read(source_location_parent_path() / "../data/MNSets.zpp")};
+
+  EXPECT_EQ(size(zpp_file.flash), 442uz);
+}

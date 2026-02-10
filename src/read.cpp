@@ -75,10 +75,11 @@ File read(std::filesystem::path path) {
   file.coded = chunk[19uz];
 
   // Developer code
-  file.developer_code = {static_cast<uint8_t>(chunk[flash_start + 2190uz]),
-                         static_cast<uint8_t>(chunk[flash_start + 2191uz]),
-                         static_cast<uint8_t>(chunk[flash_start + 2192uz]),
-                         static_cast<uint8_t>(chunk[flash_start + 2193uz])};
+  if (size(chunk) > flash_start + 2193uz)
+    file.developer_code = {static_cast<uint8_t>(chunk[flash_start + 2190uz]),
+                           static_cast<uint8_t>(chunk[flash_start + 2191uz]),
+                           static_cast<uint8_t>(chunk[flash_start + 2192uz]),
+                           static_cast<uint8_t>(chunk[flash_start + 2193uz])};
 
   // WAV file names
   file.wav_file_names.resize(259uz);

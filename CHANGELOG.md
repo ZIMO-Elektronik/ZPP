@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.2.1
+- Bugfix not all ZPP files contain developer code
+
 ## 0.2.0
 - Add `wav_file_names`, `author` and `email`
 
