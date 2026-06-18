@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.2.2
+- Bugfix signed conversion issue with wav file count ([#4](https://github.com/ZIMO-Elektronik/ZPP/issues/4))
+
 ## 0.2.1
 - Bugfix not all ZPP files contain developer code
 

@@ -47,3 +47,9 @@ TEST(read, read_mn) {
 
   EXPECT_EQ(size(zpp_file.flash), 442uz);
 }
+
+// https://github.com/ZIMO-Elektronik/ZPP/issues/4
+TEST(read, wav_count_signed_conversion_error) {
+  auto zpp_file{zpp::read(source_location_parent_path() /
+                          "../data/Z-48-1-232-0-1_BR95Kohle.zpp")};
+}

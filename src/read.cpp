@@ -88,7 +88,8 @@ File read(std::filesystem::path path) {
                                       static_cast<uint8_t>(chunk[30uz]) << 8u |
                                       static_cast<uint8_t>(chunk[31uz]) << 0u)};
   auto const wav_count{
-    static_cast<size_t>(chunk[32uz] << 8u | chunk[33uz] << 0u)};
+    static_cast<size_t>(static_cast<uint8_t>(chunk[32uz]) << 8u |
+                        static_cast<uint8_t>(chunk[33uz]) << 0u)};
   for (auto i{0uz}; i < wav_count; ++i) {
     auto const number{
       static_cast<uint16_t>(static_cast<uint8_t>(chunk[wav_addr + 0uz]) << 8u |
