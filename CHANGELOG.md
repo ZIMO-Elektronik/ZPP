@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.2.3
+- Bugfix UB shifts ([#5](https://github.com/ZIMO-Elektronik/ZPP/issues/5))
+
 ## 0.2.2
 - Bugfix signed conversion issue with wav file count ([#4](https://github.com/ZIMO-Elektronik/ZPP/issues/4))
 
