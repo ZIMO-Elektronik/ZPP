@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.2.4
+- Bugfix Latin-1 encoding ([#6](https://github.com/ZIMO-Elektronik/ZPP/issues/6))
+
 ## 0.2.3
 - Bugfix UB shifts ([#5](https://github.com/ZIMO-Elektronik/ZPP/issues/5))
 

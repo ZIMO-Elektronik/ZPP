@@ -10,7 +10,6 @@ TEST(read, read_throws_on_invalid_path) {
 TEST(read, read_free_zpp) {
   auto zpp_file{zpp::read(source_location_parent_path() /
                           "Da_Di_Collection_ZIMO-mfx-16Bit_S02.zpp")};
-
   EXPECT_EQ(zpp_file.cvs[0uz], (std::pair<uint16_t, uint8_t>{0u, 3u}));
   EXPECT_FALSE(zpp_file.coded);
   EXPECT_EQ(zpp_file.developer_code, (std::array<uint8_t, 4uz>{}));
@@ -22,7 +21,6 @@ TEST(read, read_free_zpp) {
 TEST(read, read_coded_zpp) {
   auto zpp_file{zpp::read(source_location_parent_path() /
                           "Taurus_LeoSoundLab_Roco_8-Pol_MX_crypt.zpp")};
-
   EXPECT_EQ(zpp_file.cvs[0uz], (std::pair<uint16_t, uint8_t>{0u, 3u}));
   EXPECT_TRUE(zpp_file.coded);
   EXPECT_NE(zpp_file.developer_code, (std::array<uint8_t, 4uz>{}));
@@ -31,7 +29,6 @@ TEST(read, read_coded_zpp) {
 
 TEST(read, read_metadata) {
   auto zpp_file{zpp::read(source_location_parent_path() / "Metadata.zpp")};
-
   EXPECT_EQ(zpp_file.wav_file_names[0uz], "Testsample1");
   EXPECT_EQ(zpp_file.wav_file_names[1uz], "Testsample2");
   EXPECT_EQ(zpp_file.wav_file_names[2uz], "Testsample3");
@@ -41,7 +38,6 @@ TEST(read, read_metadata) {
 
 TEST(read, read_mn) {
   auto zpp_file{zpp::read(source_location_parent_path() / "MNSets.zpp")};
-
   EXPECT_EQ(size(zpp_file.flash), 442uz);
 }
 
@@ -49,4 +45,11 @@ TEST(read, read_mn) {
 TEST(read, wav_count_signed_conversion_error) {
   auto zpp_file{
     zpp::read(source_location_parent_path() / "Z-48-1-232-0-1_BR95Kohle.zpp")};
+}
+
+// https://github.com/ZIMO-Elektronik/ZPP/issues/6
+TEST(read, fuck_latin1) {
+  auto zpp_file{zpp::read(source_location_parent_path() /
+                          "Da_Di_Collection_ZIMO-mfx-16Bit_S02.zpp")};
+  EXPECT_EQ(zpp_file.wav_file_names[197uz], "Entwässern");
 }
