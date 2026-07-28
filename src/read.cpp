@@ -17,6 +17,26 @@
 
 namespace zpp {
 
+namespace {
+
+/// Latin-1 to UTF-8
+///
+/// \param  input Latin-1 string to convert
+/// \return UTF-8 string
+std::string latin1_to_utf8(std::string_view input) {
+  std::string retval;
+  retval.reserve(size(input));
+  for (auto sc : input)
+    if (auto const uc{static_cast<uint8_t>(sc)}; uc < 0x80u) retval += sc;
+    else {
+      retval += static_cast<char>(0xC0u | (uc >> 6u));
+      retval += static_cast<char>(0x80u | (uc & 0x3Fu));
+    }
+  return retval;
+}
+
+} // namespace
+
 File read(std::filesystem::path path) {
   if (!exists(path))
     throw std::filesystem::filesystem_error(
@@ -101,7 +121,7 @@ File read(std::filesystem::path path) {
     auto const count{chunk[wav_addr]};
     wav_addr += sizeof(count);
     file.wav_file_names[number - 1uz] =
-      std::string(reinterpret_cast<char const*>(&chunk[wav_addr]), count);
+      latin1_to_utf8({reinterpret_cast<char const*>(&chunk[wav_addr]), count});
     wav_addr += count;
   }
 
